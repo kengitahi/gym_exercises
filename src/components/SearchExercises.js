@@ -6,7 +6,7 @@ import HorizontalScrollbar from "./HorizontalScrollbar"
 import { exerciseOptions, fetchData } from "../utils/fetchData"
 
 
-const SearchExercises = ( {setExercises, bodyPart, setBodyPart}) => {
+const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     const [search, setSearch] = useState("");
     const [bodyParts, setBodyParts] = useState([])
 
@@ -26,9 +26,9 @@ const SearchExercises = ( {setExercises, bodyPart, setBodyPart}) => {
 
             const searchedExercises = exercisesData.filter(
                 (exercise) => exercise.name.toLowerCase().includes(search) ||
-                exercise.target.toLowerCase().includes(search) ||
-                exercise.equipment.toLowerCase().includes(search) ||
-                exercise.bodyPart.toLowerCase().includes(search)
+                    exercise.target.toLowerCase().includes(search) ||
+                    exercise.equipment.toLowerCase().includes(search) ||
+                    exercise.bodyPart.toLowerCase().includes(search)
             );
             //clear search field after finishing the search
             setSearch("")
@@ -80,8 +80,8 @@ const SearchExercises = ( {setExercises, bodyPart, setBodyPart}) => {
                 >
                     Search</Button>
             </Box>
-            <Box sx={{ position:"relative", width:"100%", padding:"20px"}}>
-                <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
+            <Box sx={{ position: "relative", width: "100%", padding: "20px" }}>
+                <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyParts />
             </Box>
         </Stack>
     )
